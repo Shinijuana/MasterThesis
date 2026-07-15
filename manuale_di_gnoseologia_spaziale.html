@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuale Teorico Operativo - Tesi Magistrale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Code:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Symbols" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0B57D0;
+            --on-primary: #FFFFFF;
+            --primary-container: #D3E3FD;
+            --on-primary-container: #041E49;
+            --surface: #FFFFFF;
+            --surface-container: #F0F4F9;
+            --surface-container-high: #E9EBF0;
+            --on-surface-default: #1B1C1D;
+            --on-surface-de-emphasis: #444746;
+            --outline: #747775;
+            --stroke-default: #DCDFE5;
+            --ff-sans: "Google Sans", "Roboto", sans-serif;
+            --ff-mono: "Google Code", monospace;
+        }
+        body {
+            font-family: var(--ff-sans);
+            background-color: var(--surface-container);
+            color: var(--on-surface-default);
+        }
+        .mono {
+            font-family: var(--ff-mono);
+        }
+        /* Custom scrollbar per la colonna sinistra */
+        .sidebar-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .sidebar-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar-scroll::-webkit-scrollbar-thumb {
+            background-color: var(--outline);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="h-screen overflow-hidden flex flex-col p-4 gap-4">
+
+    <!-- HEADER DELLA TESI -->
+    <header class="bg-white rounded-2xl p-4 flex flex-col md:flex-row justify-between items-start md:items-center shadow-sm shrink-0 gap-2 border border-[#DCDFE5]">
+        <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-[#0B57D0] mb-1">Tesi di Laurea Magistrale in Interaction Design</div>
+            <h1 class="text-2xl font-bold tracking-tight">Manuale Teorico Operativo: Spazi Liminali ed Hacking Percettivo</h1>
+        </div>
+        <div class="flex items-center gap-2 bg-[#F0F4F9] px-3 py-1.5 rounded-full border border-[#DCDFE5]">
+            <span class="google-symbols text-sm text-[#0B57D0] font-bold">menu_book</span>
+            <span class="text-xs font-medium text-[#444746] mono">STATO: TEORIA STRUTTURATA</span>
+        </div>
+    </header>
+
+    <!-- MAIN LAYOUT -->
+    <main class="flex-1 flex gap-4 min-h-0">
+        
+        <!-- COLONNA SINISTRA: NAVIGAZIONE ED INDICE METODOLOGICO -->
+        <aside class="w-80 bg-white rounded-2xl p-4 flex flex-col gap-4 shadow-sm border border-[#DCDFE5] shrink-0">
+            <div class="flex items-center gap-2 pb-2 border-b border-[#DCDFE5]">
+                <span class="google-symbols text-[#444746]">explore</span>
+                <h2 class="text-sm font-bold uppercase tracking-wider text-[#444746]">Bussola Metodologica</h2>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto sidebar-scroll flex flex-col gap-2">
+                <!-- Sezione 1 -->
+                <a href="#problem_framing" class="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F0F4F9] transition-all">
+                    <span class="google-symbols text-sm text-[#B3261E] mt-1 group-hover:scale-110 transition-transform">report_problem</span>
+                    <div>
+                        <div class="text-sm font-bold text-[#1B1C1D]">1. Il Problema di Partenza</div>
+                        <div class="text-xs text-[#444746]">La Valvola di Riduzione e l'Assuefazione Percettiva</div>
+                    </div>
+                </a>
+                
+                <!-- Sezione 2 -->
+                <a href="#rite_transition" class="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F0F4F9] transition-all">
+                    <span class="google-symbols text-sm text-[#146C2E] mt-1 group-hover:scale-110 transition-transform">schema</span>
+                    <div>
+                        <div class="text-sm font-bold text-[#1B1C1D]">2. Lo Schema della Sequenza</div>
+                        <div class="text-xs text-[#444746]">Struttura, Antistruttura e il Limen Tripartito</div>
+                    </div>
+                </a>
+
+                <!-- Sezione 3 -->
+                <a href="#multisensory_science" class="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F0F4F9] transition-all">
+                    <span class="google-symbols text-sm text-[#0B57D0] mt-1 group-hover:scale-110 transition-transform">science</span>
+                    <div>
+                        <div class="text-sm font-bold text-[#1B1C1D]">3. Scienza Multisensoriale</div>
+                        <div class="text-xs text-[#444746]">Integrazione, Cross-modalità ed Hacking Fisiologico</div>
+                    </div>
+                </a>
+
+                <!-- Sezione 4 -->
+                <a href="#mind_framework" class="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F0F4F9] transition-all">
+                    <span class="google-symbols text-sm text-[#146C2E] mt-1 group-hover:scale-110 transition-transform">analytics</span>
+                    <div>
+                        <div class="text-sm font-bold text-[#1B1C1D]">4. Strumento di Misurazione</div>
+                        <div class="text-xs text-[#444746]">Il Framework MI'N'D per la Validazione</div>
+                    </div>
+                </a>
+
+                <!-- Sezione 5 -->
+                <a href="#geographies_visions" class="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#F0F4F9] transition-all">
+                    <span class="google-symbols text-sm text-[#F9AB00] mt-1 group-hover:scale-110 transition-transform">map</span>
+                    <div>
+                        <div class="text-sm font-bold text-[#1B1C1D]">5. Geografie Spaziali</div>
+                        <div class="text-xs text-[#444746]">Teorie Ambientali, Corporee ed Urban Mindscapes</div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="p-3 bg-[#D3E3FD] text-[#041E49] rounded-xl text-xs flex flex-col gap-1 border border-[#041E49]/10">
+                <span class="font-bold flex items-center gap-1"><span class="google-symbols text-sm">lightbulb</span> Nota Operativa per l'IxD:</span>
+                Tutti i dati estratti fungono da "manopole di input" per il comportamento e la logica reattiva dei futuri tre spazi fisici.
+            </div>
+        </aside>
+
+        <!-- COLONNA DESTRA: CONTENUTO DETTAGLIATO DEL MANUALE -->
+        <section class="flex-1 bg-white rounded-2xl shadow-sm border border-[#DCDFE5] flex flex-col overflow-hidden">
+            
+            <div class="flex items-center justify-between px-6 py-4 border-b border-[#DCDFE5] bg-[#F8F9FA] shrink-0">
+                <div class="flex items-center gap-2">
+                    <span class="google-symbols text-[#0B57D0]">history_edu</span>
+                    <span class="text-sm font-bold text-[#1B1C1D] uppercase tracking-wide">Recap di Ricerca Teorica Integrata</span>
+                </div>
+                <div class="text-xs text-[#444746] font-medium mono">Tesi Magistrale - 2026</div>
+            </div>
+
+            <!-- CONTENUTO DEL DOCUMENTO (SCROLLABILE) -->
+            <div class="flex-1 overflow-y-auto p-6 space-y-12 scroll-smooth">
+
+                <!-- SEZIONE 1 -->
+                <article id="problem_framing" class="scroll-mt-6 space-y-6">
+                    <div class="flex items-center gap-3 border-b pb-3 border-[#DCDFE5]">
+                        <span class="google-symbols text-2xl text-[#B3261E]">report_problem</span>
+                        <h2 class="text-xl font-bold">1. Il Problema di Partenza: La Valvola di Riduzione e l'Assuefazione Percettiva</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <h3 class="text-md font-bold text-[#0B57D0]">La "Valvola di Riduzione" (Aldous Huxley & Henri Bergson)</h3>
+                            <p class="text-sm leading-relaxed text-[#444746]">
+                                L'esperienza umana quotidiana è intrinsecamente isolata: ogni individuo vive come una <strong>"società di universi-isole"</strong>, in cui le sensazioni pure sono incomunicabili se non attraverso la mediazione grossolana del linguaggio. 
+                                Riprendendo Henri Bergson, Huxley postula che la funzione primaria del cervello, del sistema nervoso e degli organi di senso <strong>non sia produttiva, bensì profondamente eliminativa</strong>.
+                            </p>
+                            <p class="text-sm leading-relaxed text-[#444746]">
+                                In teoria, la mente umana (<strong>"Intelletto in Genere"</strong>) ha la capacità potenziale di percepire <em>"tutto ciò che accade dovunque nell'universo"</em> e di ricordare ogni istante. Tuttavia, per garantire la sopravvivenza biologica su questo pianeta, il cervello agisce come una <strong>valvola di riduzione</strong>. Esso filtra la massa soverchiante di informazioni inutili, lasciando passare solo quel "misero rigagnolo" di coscienza pratica e utilitaristica necessaria per vivere.
+                            </p>
+                        </div>
+                        <div class="bg-[#F0F4F9] p-4 rounded-xl space-y-3 border border-[#DCDFE5]">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-[#041E49] mono">Il Glitch del Linguaggio</h3>
+                            <p class="text-xs leading-relaxed text-[#444746]">
+                                Per dare un senso a questa ridotta consapevolezza biologica, l'uomo ha inventato i sistemi simbolici e il linguaggio, i quali diventano però una <strong>trappola cognitiva</strong>: l'essere umano finisce per confondere i propri concetti con i dati reali, scambiando le parole per le cose stesse.
+                            </p>
+                            <div class="p-3 bg-white rounded-lg border border-[#DCDFE5] space-y-2">
+                                <div class="text-xs font-bold text-[#0B57D0] flex items-center gap-1"><span class="google-symbols text-xs">key</span> L'obiettivo del Risveglio Sensoriale:</div>
+                                <ul class="text-xs text-[#444746] list-disc list-inside space-y-1">
+                                    <li>Allentare temporaneamente la valvola di riduzione.</li>
+                                    <li>Bypassare le coordinate cartesiane e misurabili di spazio e tempo.</li>
+                                    <li>Raggiungere la condizione di <strong>"Non-Io"</strong>: la contemplazione pura, infinita e luminosa del significato intrinseco dell'esistenza nuda (l'<em>Istigkeit</em> o "ità" delle cose).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SEZIONE 2 -->
+                <article id="rite_transition" class="scroll-mt-6 space-y-6">
+                    <div class="flex items-center gap-3 border-b pb-3 border-[#DCDFE5]">
+                        <span class="google-symbols text-2xl text-[#146C2E]">schema</span>
+                        <h2 class="text-xl font-bold">2. Lo Schema della Sequenza: Struttura, Antistruttura e il Limen Tripartito</h2>
+                    </div>
+
+                    <p class="text-sm leading-relaxed text-[#444746]">
+                        Per tradurre l'allentamento della valvola di riduzione in un percorso fisico-interattivo, la ricerca si affida all'antropologia del processo rituale di <strong>Victor Turner</strong> e <strong>Arnold van Gennep</strong>. La società si rivela non come un monolite statico, ma come un costante rapporto dinamico tra due polarità: <strong>la Struttura</strong> (gerarchia e norme) e <strong>l'Antistruttura</strong> (sospensione temporanea delle regole in cui l'individuo ritrova il significato sociale globale).
+                    </p>
+
+                    <!-- TABELLA COMPRENSIVA DELLE POLARITÀ DI TURNER -->
+                    <div class="overflow-x-auto border border-[#DCDFE5] rounded-xl shadow-inner">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr class="bg-[#F0F4F9] border-b border-[#DCDFE5] text-[#041E49]">
+                                    <th class="p-3 font-bold">Proprietà della Liminalità (Antistruttura / Soglia)</th>
+                                    <th class="p-3 font-bold">Proprietà del Sistema di Status (Struttura / Quotidiano)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-[#DCDFE5] bg-white text-[#444746] mono">
+                                <tr><td class="p-3">Transizione</td><td class="p-3">Stato</td></tr>
+                                <tr><td class="p-3">Omogeneità (Communitas)</td><td class="p-3">Eterogeneità (Struttura)</td></tr>
+                                <tr><td class="p-3">Uguaglianza / Anonimato</td><td class="p-3">Disuguaglianza / Sistemi di nomenclatura</td></tr>
+                                <tr><td class="p-3">Assenza di proprietà e status</td><td class="p-3">Proprietà e status definiti</td></tr>
+                                <tr><td class="p-3">Nudità o vestiario uniforme</td><td class="p-3">Distinzione nel vestiario e nel rango</td></tr>
+                                <tr><td class="p-3">Umiltà / Riduzione a "Tabula Rasa"</td><td class="p-3">Giusto orgoglio della propria posizione sociale</td></tr>
+                                <tr><td class="p-3">Mancanza di egoismo / Assenza di ego</td><td class="p-3">Egoismo normativo</td></tr>
+                                <tr><td class="p-3">Istruzione sacra (Contemplazione dell'Essenza)</td><td class="p-3">Sapere tecnico e utilitaristico</td></tr>
+                                <tr><td class="p-3">Silenzio / Sospensione dei diritti</td><td class="p-3">Parola / Diritti e doveri regolati</td></tr>
+                                <tr><td class="p-3">Riferimento continuo ai poteri mistici</td><td class="p-3">Riferimento intermittente ai poteri mistici</td></tr>
+                                <tr><td class="p-3">Stoltezza sacra / Semplicità</td><td class="p-3">Sagacia / Complessità organizzativa</td></tr>
+                                <tr><td class="p-3">Accettazione del dolore e della sofferenza</td><td class="p-3">Fuga dal dolore e dalle sofferenze</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- IL MODELLO TRIPARTITO COME STRUTTURA PROGETTUALE -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                        <div class="p-4 bg-white border border-[#DCDFE5] rounded-xl space-y-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-[#444746] mono">Fase 1: Preliminale</span>
+                            <h4 class="text-sm font-bold text-[#0B57D0]">Separazione Spaziale</h4>
+                            <p class="text-xs text-[#444746] leading-relaxed">
+                                L'individuo viene distaccato fisicamente e psicologicamente dalle condizioni culturali e quotidiane ordinarie. È il momento in cui si taglia il contatto con l'esterno.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-white border border-[#0B57D0]/30 rounded-xl space-y-2 relative ring-2 ring-[#0B57D0]/10">
+                            <span class="text-xs font-bold uppercase tracking-wider text-[#0B57D0] mono">Fase 2: Liminale (Il Limen)</span>
+                            <h4 class="text-sm font-bold text-[#0B57D0]">Il Margine / La Soglia</h4>
+                            <p class="text-xs text-[#444746] leading-relaxed">
+                                Una zona intermedia e ambigua "dentro il tempo e fuori dal tempo". L'utente sfugge alle classificazioni, viene spogliato dei suoi status e ridotto a una <strong>tabula rasa</strong> sensoriale.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-white border border-[#DCDFE5] rounded-xl space-y-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-[#444746] mono">Fase 3: Postliminale</span>
+                            <h4 class="text-sm font-bold text-[#0B57D0]">Riaggregazione</h4>
+                            <p class="text-xs text-[#444746] leading-relaxed">
+                                Il soggetto viene reincorporato nell'ambiente con un nuovo status e una consapevolezza ridefinita della realtà e del Sé, integrando l'esperienza vissuta.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- INTERAZIONE E SIMBOLO DOMINANTE -->
+                    <div class="p-4 bg-[#F0F4F9] rounded-xl border border-[#DCDFE5] space-y-2">
+                        <h4 class="text-sm font-bold text-[#041E49] flex items-center gap-1"><span class="google-symbols text-sm">stars</span> Il motore dell'azione: Il "Simbolo Dominante"</h4>
+                        <p class="text-xs text-[#444746] leading-relaxed">
+                            Nelle tre sequenze, l'elemento interattivo agirà come quello che Victor Turner definisce un <strong>Simbolo Dominante</strong>: un condensatore di significati dotato di <strong>multivocalità</strong>, capace di unire in un'unica forma un <em>polo biologico/fisico</em> (carico di affettività e legato ai processi fisiologici umani) e un <em>polo normativo/ideologico</em> (legato al significato dello spazio).
+                        </p>
+                    </div>
+                </article>
+
+                <!-- SEZIONE 3 -->
+                <article id="multisensory_science" class="scroll-mt-6 space-y-6">
+                    <div class="flex items-center gap-3 border-b pb-3 border-[#DCDFE5]">
+                        <span class="google-symbols text-2xl text-[#0B57D0]">science</span>
+                        <h2 class="text-xl font-bold">3. Scienza Multisensoriale: Integrazione, Cross-modalità ed Hacking Fisiologico</h2>
+                    </div>
+
+                    <p class="text-sm leading-relaxed text-[#444746]">
+                        Perché la tesi possa fondarsi su dati scientifici solidi, la gnoseologia della percezione deve abbandonare la fallace credenza culturale dei "cinque sensi" indipendenti per abbracciare i meccanismi neurologici dell'<strong>Integrazione Multisensoriale</strong> e delle <strong>Corrispondenze Cross-modali</strong>.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Integrazione -->
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-bold text-[#0B57D0] flex items-center gap-1.5"><span class="google-symbols text-md">join_inner</span> Integrazione Multisensoriale (N. Bruno)</h3>
+                            <p class="text-xs leading-relaxed text-[#444746]">
+                                Processo in cui segnali provenienti da canali sensoriali diversi si fondono nel cervello in un <strong>unico percetto unificato</strong> avvertito in una singola modalità (es. l'illusione della "pelle a pergamena", in cui alterando l'udito si cambia la percezione tattile della pelle). 
+                            </p>
+                            <p class="text-xs leading-relaxed text-[#444746]">
+                                Avviene se si rispetta la <strong>congruenza spazio-temporale</strong> e segue il principio di "integrazione ottimale" (il cervello pesa maggiormente lo stimolo in quel momento più affidabile, solitamente la vista).
+                            </p>
+                        </div>
+
+                        <!-- Cross-modalità -->
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-bold text-[#0B57D0] flex items-center gap-1.5"><span class="google-symbols text-md">compare_arrows</span> Corrispondenze Cross-modali</h3>
+                            <p class="text-xs leading-relaxed text-[#444746]">
+                                Associazioni spontanee, universali e pre-semantiche tra stimoli di sensi diversi (es. effetto "Bouba-Kiki", o l'associazione di toni acuti con forme luminose e posizionate in alto). 
+                            </p>
+                            <p class="text-xs leading-relaxed text-[#444746]">
+                                Se c'è <strong>congruenza cross-modale</strong>, l'utente sperimenta "facilità cognitiva" (<em>cognitive ease</em>), che si traduce in comfort. Al contrario, se c'è <strong>incongruenza cross-modale volontaria</strong>, il cervello sperimenta un "glitch", faticando a processare l'ambiente. Questo meccanismo, appartenente al <strong>"Sistema 1"</strong> di Kahneman (veloce, automatico e istintivo), è un'arma potentissima per l'Interaction Design per interrompere l'assuefazione quotidiana.
+                            </p>
+                        </div>
+
+                        <!-- Hacking Fisiologico -->
+                        <div class="space-y-3">
+                            <h3 class="text-sm font-bold text-[#0B57D0] flex items-center gap-1.5"><span class="google-symbols text-md">thermostat</span> L'Hacking Fisiologico (Hue-Heat & Illuminance)</h3>
+                            <p class="text-xs leading-relaxed text-[#444746]">
+                                <strong>Ipotesi Tinta-Calore:</strong> Lo studio sperimentale di d'Ambrosio Alfano et al. (2019) dimostra che a parità di temperatura fisica bloccata a 20°C, la luce calda a 3000 K altera la percezione termica (TSV medio +0.74, leggermente caldo), mentre la luce fredda a 6000 K la abbassa a +0.32 (spostando il 14% verso il leggermente freddo). 
+                            </p>
+                            <p class="text-xs leading-relaxed text-[#444746]">
+                                <strong>La sensibilità di genere:</strong> Le donne sono molto più sensibili a questa incongruenza termica-visiva (sotto luce fredda a 6000 K, la neutralità termica femminile è quasi raddoppiata, balzando dal 34% al 51%).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TABELLA DI CONVERSIONE CCT/WAVELENGTH -->
+                    <div class="bg-white border border-[#DCDFE5] rounded-xl p-4 space-y-3">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-[#041E49] mono">Dati Fisici di Conversione Spettrale (Legge di Wien)</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mono text-xs">
+                            <div class="p-2 bg-[#F0F4F9] rounded-lg">
+                                <div class="text-[#0B57D0] font-bold">3000 K (Warm)</div>
+                                <div class="text-[#444746]">~ 965 nm</div>
+                            </div>
+                            <div class="p-2 bg-[#F0F4F9] rounded-lg">
+                                <div class="text-[#0B57D0] font-bold">5000 K</div>
+                                <div class="text-[#444746]">~ 580 nm</div>
+                            </div>
+                            <div class="p-2 bg-[#F0F4F9] rounded-lg">
+                                <div class="text-[#0B57D0] font-bold">6000 K (Cool)</div>
+                                <div class="text-[#444746]">~ 480 nm</div>
+                            </div>
+                            <div class="p-2 bg-[#F0F4F9] rounded-lg">
+                                <div class="text-[#0B57D0] font-bold">7500 K</div>
+                                <div class="text-[#444746]">~ 390 nm</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SEZIONE 4 -->
+                <article id="mind_framework" class="scroll-mt-6 space-y-6">
+                    <div class="flex items-center gap-3 border-b pb-3 border-[#DCDFE5]">
+                        <span class="google-symbols text-2xl text-[#146C2E]">analytics</span>
+                        <h2 class="text-xl font-bold">4. Strumento di Misurazione: Il Framework MI'N'D per la Validazione</h2>
+                    </div>
+
+                    <p class="text-sm leading-relaxed text-[#444746]">
+                        Sviluppato da Emilio Lonardo in <em>"Urban Mindscapes"</em>, questo framework permette di **qualificare e quantificare l'impatto psicologico ed emotivo del design spaziale sull'utente**, uscendo dall'alveo delle speculazioni astratte. È strutturato in 7+7 Indicatori e 10+10 Dimensioni (polarità).
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs leading-relaxed">
+                        <!-- Indicatori Espressivi e Percettivi -->
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-bold text-[#146C2E]">I 7+7 Indicatori di Misurazione</h3>
+                            <div class="bg-[#F0F4F9] p-4 rounded-xl space-y-4 border border-[#DCDFE5]">
+                                <div>
+                                    <h4 class="font-bold text-[#041E49] mb-1">Indicatori Espressivi (Dati quantificabili di progetto):</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-[#444746]">
+                                        <li><strong>Quantità (n):</strong> Numero di elementi installati (es. sorgenti led, attuatori, etc.).</li>
+                                        <li><strong>Età (mesi/anni):</strong> Tempo intercorso dalla realizzazione dell'interfaccia.</li>
+                                        <li><strong>Disponibilità (n/x):</strong> Probabilità per l'utente di accedere fisicamente all'interfaccia.</li>
+                                        <li><strong>Distanza (m):</strong> Spazio metrico che separa le interfacce o i punti di interazione.</li>
+                                        <li><strong>Esposizione (min/ore):</strong> Tempo speso dall'utente all'interno della sequenza.</li>
+                                        <li><strong>Densità (n/dam²):</strong> Concentrazione di stimoli per unità di superficie.</li>
+                                        <li><strong>Dimensione (m/mq):</strong> Altezze e ingombri volumetrici delle tre stanze.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#041E49] mb-1">Indicatori Percettivi (Dati qualitativi raccolti su utenti):</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-[#444746]">
+                                        <li><strong>Qualità:</strong> Stato di manutenzione percepito dell'interfaccia spaziale.</li>
+                                        <li><strong>Sicurezza (Security):</strong> Livello di incolumità percepito dall'utente durante l'interazione.</li>
+                                        <li><strong>Riconoscibilità:</strong> Livello di identificazione dei canali interattivi e dei codici fisici.</li>
+                                        <li><strong>Accessibilità:</strong> Facilità di accoglienza e comprensione delle barriere fisiche.</li>
+                                        <li><strong>Attaccamento:</strong> Misura del senso di appartenenza generato (es. propensione a ritornare).</li>
+                                        <li><strong>Autenticità:</strong> Percezione di genuinità dei materiali e delle risposte del sistema.</li>
+                                        <li><strong>Controllabilità:</strong> Senso di controllo esercitato dall'utente sull'ambiente interattivo.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Polarità -->
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-bold text-[#146C2E]">Le 10+10 Dimensioni (Polarità operative)</h3>
+                            <p class="text-[#444746]">
+                                Queste polarità fungono da "manopole" durante la fase di progettazione e calibrazione degli stimoli. Permettono al progettista di modulare l'equilibrio tra stati fisici e risposte percettive:
+                            </p>
+                            <div class="bg-white border border-[#DCDFE5] rounded-xl p-4 space-y-3 mono">
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">WILD</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">ANTHROPIC</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">FLEXIBLE</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">FIXED</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">VIBRANT</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">FLAT</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">VERNACULAR</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">EXOTIC</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">WIDE</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">NARROW</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">INCLUSIVE</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">EXCLUSIVE</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">ATMOSPHERIC</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">CONCRETE</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">RELAXING</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">EXCITING</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">SECURE</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">INVENTIVE</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-[#F0F4F9] p-1 px-2 rounded">
+                                    <span class="font-bold">COLLECTIVE</span> <span class="text-xs text-[#0B57D0]">vs</span> <span class="font-bold">PERSONAL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SEZIONE 5 -->
+                <article id="geographies_visions" class="scroll-mt-6 space-y-6">
+                    <div class="flex items-center gap-3 border-b pb-3 border-[#DCDFE5]">
+                        <span class="google-symbols text-2xl text-[#F9AB00]">map</span>
+                        <h2 class="text-xl font-bold">5. Geografie Spaziali: Teorie Ambientali, Corporee ed Urban Mindscapes</h2>
+                    </div>
+
+                    <p class="text-sm leading-relaxed text-[#444746]">
+                        Per inquadrare l'unione tra il corpo dell'utente e la complessità dell'ambiente urbano, è necessario formalizzare le teorie e le metodologie di lettura psicogeografica dello spazio:
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs leading-relaxed">
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-bold text-[#F9AB00]">La Percezione Corporea ed Embodied</h3>
+                            <ul class="space-y-3 text-[#444746]">
+                                <li>
+                                    <strong>Maurice Merleau-Ponty (La Fenomenologia della Percezione):</strong> 
+                                    La percezione non è un calcolo razionale del cervello, ma un incontro somatico tra il nostro corpo (vissuto come <em>"flesh of the world"</em>) e lo spazio circostante. Lo schema corporeo si estende e si modifica attraverso gli oggetti e le interfacce con cui interagiamo.
+                                </li>
+                                <li>
+                                    <strong>Juhani Pallasmaa (La pelle e l'empatia):</strong>
+                                    L'architettura e lo spazio devono essere progettati con una sensibilità multi-sensoriale, riducendo l'egemonia visiva dell'oculocentrismo. È il tatto ad agire come mediatore primario tra il Sé e il Mondo (tatto diretto con le materie e <strong>tatto indiretto</strong>, ovvero la sensazione termica o materica evocata dalla sola vista).
+                                </li>
+                                <li>
+                                    <strong>Ugo La Pietra (Abitare la Città):</strong>
+                                    L'atto di abitare non si ferma alle pareti domestiche: <em>"Abitare è essere ovunque a casa propria"</em>. Per contrastare l'alienazione delle città-macchina, è necessario compiere un'operazione di <strong>appropriazione fisica e decodificazione del territorio</strong>, trasformando gli oggetti utilitari in supporti simbolici e spettacolari.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h3 class="text-sm font-bold text-[#F9AB00]">Psicologia Ambientale ed Urban Mindscapes</h3>
+                            <ul class="space-y-3 text-[#444746]">
+                                <li>
+                                    <strong>Gernot Böhme (Teoria dell'Atmosfera):</strong>
+                                    L'atmosfera è il riflesso emotivo generato dall'unione di elementi percepibili. È un campo affettivo e relazionale che avvolge lo spazio e condiziona direttamente lo stato biologico e psicofisico del visitatore.
+                                </li>
+                                <li>
+                                    <strong>Rachel e Stephen Kaplan (Stress & Restoring):</strong>
+                                    Teoria del <strong>ripristino dell'attenzione (ART)</strong>. Ambienti caotici e sovraccarichi esauriscono l'attenzione focalizzata dell'utente (affaticamento mentale). L'esperienza in ambienti naturali o guidati da stimoli poetici e inattesi cattura l'attenzione involontaria (<em>soft fascination</em>), permettendo al cervello razionale di ricaricarsi.
+                                </li>
+                                <li>
+                                    <strong>James J. Gibson & Donald Norman (Teoria delle Affordance):</strong>
+                                    Le possibilità di interazione offerte dallo spazio e dagli oggetti (affordance). Gli utenti decodificano i segnali e compiono azioni guidati da vincoli fisici, logici e culturali. Progettare uno spazio interattivo significa progettare affordance chiare, ma anche lasciare margini di esplorazione inattesi (affordance nascoste).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+            
+            <div class="px-6 py-3 border-t border-[#DCDFE5] bg-[#F8F9FA] shrink-0 text-center text-xs text-[#444746] mono">
+                Manuale Teorico Operativo v1.2 • Fine del Documento
+            </div>
+        </section>
+    </main>
+</body>
+</html>
